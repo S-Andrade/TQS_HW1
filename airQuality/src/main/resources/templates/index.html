@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AirQualitya</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    
+</style>
+<body>
+   
+       
+    <select id="selected_country" onchange="getStates()">
+        <option selected  disabled th:value="${country}" th:text="${country}"></option>
+        <tr th:each="country : ${countries}">
+            <option th:value="${country.country}" th:text="${country.country}"></option>
+        </tr>
+    </select>
+
+    <select id="selected_state" onchange="getCities()">
+        <option selected  disabled th:value="${state}" th:text="${state}"></option>
+        <tr th:each="state : ${states}">
+            <option th:value="${state.state}" th:text="${state.state}"></option>
+        </tr>
+    </select>
+
+    <select id="selected_city" onchange="getData()">
+        <option selected  disabled th:value="${city}" th:text="${city}"></option>
+        <tr th:each="city : ${cities}">
+            <option th:value="${city.city}" th:text="${city.city}"></option>
+        </tr>
+    </select>
+    
+    <button onclick="newSearch()">New Search</button>
+
+    <div id="data" th:style="${visibility} == 'hidden' ? 'visibility:hidden' : 'visibility:visible'">
+        <p>Weather</p>
+        <table>
+                <thead>
+                    <tr>
+                        <th>tp</th>
+                        <th>pr</th>
+                        <th>hu</th>
+                        <th>ws</th>
+                        <th>wd</th>
+                        <th>ic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="w : ${weather}">
+                    <td th:text="${w.tp}"></td>
+                    <td th:text="${w.pr}"></td>
+                    <td th:text="${w.hu}"></td>
+                    <td th:text="${w.ws}"></td>
+                    <td th:text="${w.wd}"></td>
+                    <td th:text="${w.ic}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Pollution</p>
+        <table>
+                <thead>
+                    <tr>
+                        <th>aqius</th>
+                        <th>mainus</th>
+                        <th>aqicn</th>
+                        <th>maincn</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="p : ${pollution}">
+                    <td th:text="${p.aqius}"></td>
+                    <td th:text="${p.mainus}"></td>
+                    <td th:text="${p.aqicn}"></td>
+                    <td th:text="${p.maincn}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+ 
+
+   <script>
+        function getStates(){
+            var x = document.getElementById("selected_country").value;
+            window.location.href = 'http://localhost:8080/states/'+ x;
+        }
+
+        function getCities(){
+            var country = document.getElementById("selected_country").value;
+            var state = document.getElementById("selected_state").value;
+            window.location.href = 'http://localhost:8080/cities/'+ country + '/'+ state;            
+
+        }
+        function newSearch(){
+            window.location.href = 'http://localhost:8080/';            
+        }
+        function getData(){
+            var country = document.getElementById("selected_country").value;
+            var state = document.getElementById("selected_state").value;
+            var city = document.getElementById("selected_city").value;
+            window.location.href = 'http://localhost:8080/currentAirQuality/'+ country + '/'+ state + '/' + city;           
+            
+        }
+    </script>
+                                 
+</body>
+</html>
