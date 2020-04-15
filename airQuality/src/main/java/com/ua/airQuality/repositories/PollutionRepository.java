@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.ua.airQuality.models.air.Pollution;
 import java.util.List;
-import org.springframework.data.repository.query.Param;
 
 @Repository
 @Transactional

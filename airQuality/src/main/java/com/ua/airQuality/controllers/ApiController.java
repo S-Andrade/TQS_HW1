@@ -6,24 +6,16 @@ import com.ua.airQuality.services.ConsumeService;
 import com.ua.airQuality.services.CityService;
 import com.ua.airQuality.services.StateService;
 import com.ua.airQuality.services.CountryService;
-import com.ua.airQuality.models.location.Cities;
 import com.ua.airQuality.models.location.City;
-import com.ua.airQuality.models.location.States;
 import com.ua.airQuality.models.location.State;
 import com.ua.airQuality.models.location.Country;
-import com.ua.airQuality.models.air.AirQuality;
 import com.ua.airQuality.models.air.Pollution;
 import com.ua.airQuality.models.air.Weather;
 import com.ua.airQuality.services.PollutionService;
 import com.ua.airQuality.services.WeatherService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
