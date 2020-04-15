@@ -69,7 +69,7 @@ public class AirQualityData implements Serializable {
     }
 
     public void setCity(String city) {
-        this.city = city.toLowerCase();
+        this.city = city;
     }
 
     public String getState() {
@@ -77,7 +77,7 @@ public class AirQualityData implements Serializable {
     }
 
     public void setState(String state) {
-        this.state = state.toLowerCase();
+        this.state = state;
     }
 
     public String getCountry() {
@@ -85,7 +85,7 @@ public class AirQualityData implements Serializable {
     }
 
     public void setCountry(String country) {
-        this.country = country.toLowerCase();
+        this.country = country;
     }
 
     public Location getLocation() {

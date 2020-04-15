@@ -19,7 +19,7 @@ import com.ua.airQuality.models.air.Weather;
 @Stateless
 public class ConsumeService {
     
-   private String key = "5177e9e2-8959-4622-a461-9e28015bb1a0";
+   private String key = "2c545c24-9c0a-4850-b7bb-e194d4fe71ea";
 
     
    public Countries consumeCountries(){

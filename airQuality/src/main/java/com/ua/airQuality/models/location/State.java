@@ -25,6 +25,11 @@ public class State implements Serializable {
         this.state = state;
     }
 
+    public State(String state, String country) {
+        this.state = state;
+        this.country = country;
+    }
+
     public long getId() {
         return id;
     }

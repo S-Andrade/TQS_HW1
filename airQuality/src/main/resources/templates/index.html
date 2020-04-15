@@ -1,12 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>AirQualitya</title>
+    <title>AirQuality</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<style>
-    
-</style>
 <body>
    
        
@@ -48,12 +45,12 @@
                 </thead>
                 <tbody>
                 <tr th:each="w : ${weather}">
-                    <td th:text="${w.tp}"></td>
-                    <td th:text="${w.pr}"></td>
-                    <td th:text="${w.hu}"></td>
-                    <td th:text="${w.ws}"></td>
-                    <td th:text="${w.wd}"></td>
-                    <td th:text="${w.ic}"></td>
+                    <td id ="wtp" th:value="${w.tp}" th:text="${w.tp}"></td>
+                    <td id ="wpr" th:value="${w.pr}" th:text="${w.pr}"></td>
+                    <td id ="whu" th:value="${w.hu}" th:text="${w.hu}"></td>
+                    <td id ="wws" th:value="${w.ws}" th:text="${w.ws}"></td>
+                    <td id ="wwd" th:value="${w.wd}" th:text="${w.wd}"></td>
+                    <td id ="wic" th:value="${w.ic}" th:text="${w.ic}"></td>
                 </tr>
             </tbody>
         </table>
@@ -69,10 +66,10 @@
                 </thead>
                 <tbody>
                 <tr th:each="p : ${pollution}">
-                    <td th:text="${p.aqius}"></td>
-                    <td th:text="${p.mainus}"></td>
-                    <td th:text="${p.aqicn}"></td>
-                    <td th:text="${p.maincn}"></td>
+                    <td id ="paqius" th:text="${p.aqius}"></td>
+                    <td id ="pmainus" th:text="${p.mainus}"></td>
+                    <td id ="paqicn" th:text="${p.aqicn}"></td>
+                    <td id ="pmaincn" th:text="${p.maincn}"></td>
                 </tr>
             </tbody>
         </table>
