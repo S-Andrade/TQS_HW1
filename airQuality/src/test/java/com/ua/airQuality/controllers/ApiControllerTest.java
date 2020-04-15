@@ -43,24 +43,19 @@ public class ApiControllerTest {
     
     @Autowired
     private MockMvc mvc;
-
     
     @MockBean
     private CountryService countryService;
-    
-    
+        
     @MockBean
     private StateService stateService;
-    
-    
+        
     @MockBean
     private CityService cityService;
-    
-    
+        
     @MockBean
     private PollutionService pollutionService;
-    
-    
+        
     @MockBean
     private WeatherService weatherService;
     
@@ -68,12 +63,9 @@ public class ApiControllerTest {
     public void allCountries_Status200() throws Exception{
         Country portugal = new Country("Portugal");
         Country japan = new Country("Japan");
-        Country korea = new Country("Korea");
-        
+        Country korea = new Country("Korea"); 
         List<Country> allCountries = Arrays.asList(portugal,japan,korea);
-
         given(countryService.getAllCountries()).willReturn(allCountries);
-        
         mvc.perform(get("/api/allCountries")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andDo(print())
@@ -83,11 +75,8 @@ public class ApiControllerTest {
                 .andExpect(jsonPath("$[0].country", is(portugal.getCountry())))
                 .andExpect(jsonPath("$[1].country", is(japan.getCountry())))
                 .andExpect(jsonPath("$[2].country", is(korea.getCountry())));
-        
         verify(countryService, VerificationModeFactory.times(1)).getAllCountries();
-        reset(countryService);
-        
-        
+        reset(countryService);        
     }
     
     @Test

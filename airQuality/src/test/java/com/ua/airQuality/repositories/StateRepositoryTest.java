@@ -31,9 +31,7 @@ public class StateRepositoryTest {
         entityManager.persist(porto);
         
         List<State> states = stateRepository.findAllByCountry("Portugal");
-        
-        assertThat(states).hasSize(2).extracting(State::getState).containsOnly(aveiro.getState(),porto.getState());
-        
+        assertThat(states).hasSize(2).extracting(State::getState).containsOnly(aveiro.getState(),porto.getState());   
     }
     
     @Test
@@ -53,10 +51,7 @@ public class StateRepositoryTest {
         entityManager.persist(porto);
         
         List<State> states = stateRepository.findAll();
-        
-        assertThat(states).hasSize(3).extracting(State::getState).containsOnly(aveiro.getState(),porto.getState(),tokyo.getState());
-        
+        assertThat(states).hasSize(3).extracting(State::getState).containsOnly(aveiro.getState(),porto.getState(),tokyo.getState());       
     }
-    
-    
+   
 }

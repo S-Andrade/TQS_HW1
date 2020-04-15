@@ -14,7 +14,6 @@ public class SeleniumTest {
     
     private WebDriver driver;
     private String baseUrl;
-    //private boolean acceptNextAlert = true;
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
