@@ -52,7 +52,7 @@ public class WebController {
         model.addAttribute("city", "City");
         model.addAttribute("visibility", "hidden");
         model.addAttribute("countries", countryService.getAllCountries());
-        return "index" ;
+        return "index";
     }
     
      @GetMapping(path="states/{country}")
